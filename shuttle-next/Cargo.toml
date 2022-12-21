@@ -1,0 +1,13 @@
+[package]
+name = "shuttle-next"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+
+[dependencies]
+shuttle-service = { version = "0.8.0", features = ["web-axum"] }
+shuttle-static-folder = "0.8.0"
+axum = "0.6.1"
+sync_wrapper = "0.1.1"
