@@ -1,4 +1,4 @@
-use axum::{Router};
+use axum::{Router, routing::get};
 use sync_wrapper::SyncWrapper;
 use std::path::PathBuf;
 use axum_extra::routing::SpaRouter;
@@ -16,18 +16,17 @@ async fn axum(#[shuttle_static_folder::StaticFolder(folder = "out")] public_fold
     // This is basically Rust's equivalent of global state in React/next etc
     let app = AppState{public: public_folder};
 
-    // initialise the router using the spa router function
-    let router = spa_router(&app);
+    // initialise the router
+    // add a health check route to make sure the api works
+    let router = Router::new()
+    .route("/api/health", get(health_check))
+    .merge(SpaRouter::new("/", &app.public).index_file("index.html"));
+
     let sync_wrapper = SyncWrapper::new(router);
 
     Ok(sync_wrapper)
 }
 
-fn spa_router(app: &AppState) -> Router {
-    // `SpaRouter` is the easiest way to serve assets at a nested route like `/assets`
-    //
-    // Requests starting with `/assets` will be served from files in the current directory.
-    // Requests to unknown routes will get `index.html`.
-    Router::new()
-        .merge(SpaRouter::new("/", &app.public).index_file("index.html"))
+async fn health_check() -> &'static str {
+    "OK"
 }
