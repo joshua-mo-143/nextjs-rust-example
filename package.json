@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "concurrently new \"next dev\" \"cargo shuttle run --working-directory api\"",
-    "build": "next build && next export -o api/public/",
-    "deploy": "yarn build && cargo shuttle deploy --working-directory api",
+    "build": "next build && next export -o api/assets/",
+    "deploy": "yarn build && cargo shuttle deploy --working-directory api --allow-dirty",
     "start": "next start",
     "lint": "next lint"
   },
