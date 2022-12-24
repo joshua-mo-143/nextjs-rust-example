@@ -17,18 +17,19 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          This is a live example of using Next.js and Rust together, served on Shuttle.
+          This is a live example of using Next.js and Rust together, served on Shuttle. <br/>
+          You can check the API works by going <a href="/api/health" style={{color:'blue'}}>here</a>.
         </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Next.js &rarr;</h2>
-            <p>Find in-depth information about Next.js which we're using for the front end.</p>
+            <p>Find in-depth information about Next.js which we&apos;re using for the front end.</p>
           </a>
 
           <a href="https://doc.rust-lang.org/book/" className={styles.card}>
             <h2>Rust &rarr;</h2>
-            <p>Learn the basics of Rust, which we're using for the back end.</p>
+            <p>Learn the basics of Rust, which we&apos;re using for the back end.</p>
           </a>
 
           <a
@@ -45,7 +46,7 @@ export default function Home() {
           >
             <h2>GitHub &rarr;</h2>
             <p>
-              Check out this project's GitHub project and view the code.
+              Check out this project&apos;s GitHub project and view the code.
             </p>
           </a>
         </div>
