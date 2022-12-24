@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently new \"next dev\" \"cargo shuttle run --working-directory api\"",
     "build": "next build && next export -o api/public/",
-    "deploy": "yarn build &&  cargo shuttle deploy --working-directory api",
+    "deploy": "yarn build && cargo shuttle deploy --working-directory api",
     "start": "next start",
     "lint": "next lint"
   },
