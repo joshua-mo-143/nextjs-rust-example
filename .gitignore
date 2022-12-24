@@ -35,6 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/api/out
+/api/public
 /api/target
 Cargo.lock
