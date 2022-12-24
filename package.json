@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently new \"next dev\" \"cargo shuttle run --working-directory shuttle-next\"",
-    "deploy": "next build && next export -o shuttle-next/out/ && cargo shuttle deploy --working-directory shuttle-next",
+    "dev": "concurrently new \"next dev\" \"cargo shuttle run --working-directory api\"",
+    "deploy": "next build && next export -o api/out/ && cargo shuttle deploy --working-directory api",
     "start": "next start",
     "lint": "next lint"
   },

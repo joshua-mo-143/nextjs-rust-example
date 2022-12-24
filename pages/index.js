@@ -13,57 +13,43 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">nextjs-rust!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          This is a live example of using Next.js and Rust together, served on Shuttle.
         </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h2>Next.js &rarr;</h2>
+            <p>Find in-depth information about Next.js which we're using for the front end.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="https://doc.rust-lang.org/book/" className={styles.card}>
+            <h2>Rust &rarr;</h2>
+            <p>Learn the basics of Rust, which we're using for the back end.</p>
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://docs.shuttle.rs/introduction/welcome"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Shuttle &rarr;</h2>
+            <p>Discover and deploy Rust back-ends easily using Shuttle.</p>
+          </a>
+
+          <a
+            href="https://github.com/joshua-mo-143/nextjs-rust-example"
+            className={styles.card}
+          >
+            <h2>GitHub &rarr;</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Check out this project's GitHub project and view the code.
             </p>
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
