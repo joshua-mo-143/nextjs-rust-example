@@ -9,7 +9,7 @@ struct AppState {
 }
 
 #[shuttle_service::main]
-async fn axum(#[shuttle_static_folder::StaticFolder(folder = "out")] public_folder: PathBuf)
+async fn axum(#[shuttle_static_folder::StaticFolder(folder = "public")] public_folder: PathBuf)
              -> shuttle_service::ShuttleAxum {
 
     // initialise an AppState struct that can be used across any route
