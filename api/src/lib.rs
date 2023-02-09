@@ -18,6 +18,6 @@ async fn axum(#[shuttle_static_folder::StaticFolder(folder = "assets")] public_f
     Ok(sync_wrapper)
 }
 
-async fn health_check() -> &'static str {
-    "OK"
-}
+// async fn health_check() -> &'static str {
+//     "OK"
+// }
