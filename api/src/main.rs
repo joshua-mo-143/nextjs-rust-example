@@ -20,11 +20,13 @@ async fn axum(#[shuttle_static_folder::StaticFolder(folder = "assets")] public_f
     // add a health check route to make sure the api works
     let router = Router::new()
     .route("/api/health", get(health_check))
-    .merge(SpaRouter::new("/", &app.public).index_file("index.html"));
-
-    let sync_wrapper = SyncWrapper::new(router);
-
-    Ok(sync_wrapper)
+    .nest_service(
+            "/",
+            ServeDir::new(public_folder).not_found_service(ServeFile::new(
+                public_folder.join("index.html")))
+        );
+    
+    Ok(router.into())
 }
 
 async fn health_check() -> &'static str {

@@ -4,11 +4,9 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 
-[lib]
-
 [dependencies]
-shuttle-service = { version = "0.10.0", features = ["web-axum"] }
-shuttle-static-folder = "0.10.0"
-axum = "0.6.1"
-sync_wrapper = "0.1.1"
-axum-extra = { version = "0.4.2", features = ["spa"] }
+shuttle-axum = "0.24.0"
+shuttle-runtime = "0.24.0"
+shuttle-static-folder = "0.24.0"
+tokio = "1.32.0"
+tower-http = { version = "0.4.3", features = ["fs"] }
